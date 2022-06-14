@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-widgetsmith-480.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,6 +56,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Widgets\AsCodeConverterWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\AsCodeConverterWidget.Designer.cs">
+      <DependentUpon>AsCodeConverterWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\BaseWidgetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\BaseWidgetControl.Designer.cs">
+      <DependentUpon>BaseWidgetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WidgetWnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WidgetWnd.Designer.cs">
+      <DependentUpon>WidgetWnd.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,7 +85,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Widgets\AsCodeConverterWidget.resx">
+      <DependentUpon>AsCodeConverterWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\BaseWidgetControl.resx">
+      <DependentUpon>BaseWidgetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WidgetWnd.resx">
+      <DependentUpon>WidgetWnd.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -74,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-widgetsmith-480.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8-widgetsmith-480.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -29,11 +29,67 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this._NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this._ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this._ToolStripMenuItemAsCodeConverter = new System.Windows.Forms.ToolStripMenuItem();
+            this._ToolStripMenuItemApplicationExit = new System.Windows.Forms.ToolStripMenuItem();
+            this._ContextMenuStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // _NotifyIcon
+            // 
+            this._NotifyIcon.ContextMenuStrip = this._ContextMenuStrip;
+            this._NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("_NotifyIcon.Icon")));
+            this._NotifyIcon.Text = "WinForm.DesktopWidget";
+            this._NotifyIcon.Visible = true;
+            this._NotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
+            // 
+            // _ContextMenuStrip
+            // 
+            this._ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._ToolStripMenuItemAsCodeConverter,
+            this._ToolStripMenuItemApplicationExit});
+            this._ContextMenuStrip.Name = "_ContextMenuStrip";
+            this._ContextMenuStrip.ShowCheckMargin = true;
+            this._ContextMenuStrip.Size = new System.Drawing.Size(194, 70);
+            // 
+            // _ToolStripMenuItemAsCodeConverter
+            // 
+            this._ToolStripMenuItemAsCodeConverter.Name = "_ToolStripMenuItemAsCodeConverter";
+            this._ToolStripMenuItemAsCodeConverter.Size = new System.Drawing.Size(193, 22);
+            this._ToolStripMenuItemAsCodeConverter.Text = "AsCode Converter";
+            this._ToolStripMenuItemAsCodeConverter.Click += new System.EventHandler(this.ToolStripMenuItemAsCodeConverter_Click);
+            // 
+            // _ToolStripMenuItemApplicationExit
+            // 
+            this._ToolStripMenuItemApplicationExit.Name = "_ToolStripMenuItemApplicationExit";
+            this._ToolStripMenuItemApplicationExit.Size = new System.Drawing.Size(193, 22);
+            this._ToolStripMenuItemApplicationExit.Text = "Exit";
+            this._ToolStripMenuItemApplicationExit.Click += new System.EventHandler(this.ToolStripMenuItemApplicationExit_Click);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "MainForm";
+            this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this._ContextMenuStrip.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.NotifyIcon _NotifyIcon;
+        private System.Windows.Forms.ContextMenuStrip _ContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemApplicationExit;
+        private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemAsCodeConverter;
     }
 }
 
