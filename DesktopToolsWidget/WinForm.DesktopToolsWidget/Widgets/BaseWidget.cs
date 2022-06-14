@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinForm.DesktopToolsWidget.Widgets
 {
-    public partial class BaseWidgetControl : UserControl
+    public partial class BaseWidget : UserControl
     {
-        public BaseWidgetControl()
+        public BaseWidget()
         {
             InitializeComponent();
         }

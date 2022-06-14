@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WinForm.DesktopToolsWidget.Widgets
 {
-    public partial class AsCodeConverterWidget : BaseWidgetControl
+    public partial class AsCodeConverterWidget : BaseWidget
     {
         public string Separator
         {

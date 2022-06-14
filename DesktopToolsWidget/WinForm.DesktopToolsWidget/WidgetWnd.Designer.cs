@@ -28,7 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this._ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this._ToolStripMenuItemExitWnd = new System.Windows.Forms.ToolStripMenuItem();
+            this._ContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // _ContextMenuStrip
+            // 
+            this._ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._ToolStripMenuItemExitWnd});
+            this._ContextMenuStrip.Name = "_ContextMenuStrip";
+            this._ContextMenuStrip.Size = new System.Drawing.Size(94, 26);
+            // 
+            // _ToolStripMenuItemExitWnd
+            // 
+            this._ToolStripMenuItemExitWnd.Name = "_ToolStripMenuItemExitWnd";
+            this._ToolStripMenuItemExitWnd.Size = new System.Drawing.Size(93, 22);
+            this._ToolStripMenuItemExitWnd.Text = "Exit";
+            this._ToolStripMenuItemExitWnd.Click += new System.EventHandler(this.ToolStripMenuItemExitWnd_Click);
             // 
             // WidgetWnd
             // 
@@ -40,10 +58,16 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "WidgetWnd";
             this.Text = "WidgetWnd";
+            this.Activated += new System.EventHandler(this.WidgetWnd_Activated);
+            this.Deactivate += new System.EventHandler(this.WidgetWnd_Deactivate);
+            this._ContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ContextMenuStrip _ContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemExitWnd;
     }
 }
