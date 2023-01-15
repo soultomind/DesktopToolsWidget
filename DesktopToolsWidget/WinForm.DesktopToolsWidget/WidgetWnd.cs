@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,7 @@ namespace WinForm.DesktopToolsWidget
         {
             if (e.Button == MouseButtons.Right)
             {
+                Trace.WriteLine("Point=" + e.Location);
                 _ContextMenuStrip.SetBounds(
                     e.X, e.Y,
                     _ContextMenuStrip.Width, _ContextMenuStrip.Height,

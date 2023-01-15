@@ -29,7 +29,7 @@ namespace WinForm.DesktopToolsWidget
 
         public delegate int HookProc(int nCode, IntPtr wParam, IntPtr lParam);
 
-        public const string User32DllName = "user32.dll";
+        public const string User32DllName = "User32.dll";
 
         [DllImport(User32DllName, CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern int SetWindowsHookEx(int idHook, HookProc lpfn, IntPtr hInstance, int threadId);

@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8-widgetsmith-480.ico</ApplicationIcon>
+    <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,6 +53,9 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\FileSizeUnitWidget.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Win32.cs" />
     <Compile Include="Program.cs" />
@@ -111,10 +114,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-widgetsmith-480.ico" />
+    <None Include="Resources\App.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icons8-widgetsmith-480.ico" />
+    <Content Include="App.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
