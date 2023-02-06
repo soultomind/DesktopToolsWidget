@@ -60,20 +60,20 @@ namespace DesktopToolsWidget.Common
 
         public static AsCode ConvetCode(char[] codes, string separator)
         {
-            AsCode asCode = new AsCode(codes);
-
             int asCodeDecimal = 0;
-            foreach (char code in asCode.Codes)
+
+            string asHexadecimal = String.Empty, asDecimal = String.Empty, asOctal = String.Empty, asBinary = String.Empty;
+            foreach (char code in codes)
             {
                 asCodeDecimal = Convert.ToInt32(code);
 
-                asCode.Hexadecimal += "0x" + Convert.ToString(asCodeDecimal, 16) + separator;
-                asCode.Decimal += asCodeDecimal.ToString() + separator;
-                asCode.Octal += Convert.ToString(asCodeDecimal, 8) + separator;
-                asCode.Binary += Convert.ToString(asCodeDecimal, 2) + separator;
+                asHexadecimal += "0x" + Convert.ToString(asCodeDecimal, 16) + separator;
+                asDecimal += asCodeDecimal.ToString() + separator;
+                asOctal += Convert.ToString(asCodeDecimal, 8) + separator;
+                asBinary += Convert.ToString(asCodeDecimal, 2) + separator;
             }
 
-            return asCode;
+            return new AsCode(codes) { Hexadecimal = asHexadecimal, Decimal = asDecimal, Octal = asOctal, Binary = asBinary };
         }
     }
 }
