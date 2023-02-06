@@ -119,6 +119,12 @@
   <ItemGroup>
     <Content Include="App.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesktopToolsWidget.Common\DesktopToolsWidget.Common.csproj">
+      <Project>{C1C3C54E-148C-413E-AF0A-022AA9279857}</Project>
+      <Name>DesktopToolsWidget.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

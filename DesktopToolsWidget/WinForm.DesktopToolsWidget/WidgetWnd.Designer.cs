@@ -58,8 +58,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "WidgetWnd";
             this.Text = "WidgetWnd";
-            this.Activated += new System.EventHandler(this.WidgetWnd_Activated);
-            this.Deactivate += new System.EventHandler(this.WidgetWnd_Deactivate);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.WidgetWnd_MouseClick);
             this._ContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 

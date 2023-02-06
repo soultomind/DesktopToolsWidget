@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm.DesktopToolsWidget", "WinForm.DesktopToolsWidget\WinForm.DesktopToolsWidget.csproj", "{89279611-494E-4540-B238-90A2FF12856B}"
 EndProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopToolsWidget.Common", "DesktopToolsWidget.Common\DesktopToolsWidget.Common.csproj", "{C1C3C54E-148C-413E-AF0A-022AA9279857}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,8 +28,15 @@ Global
 		{2ECEE08D-05C3-4F60-9E1A-4F3378B43F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ECEE08D-05C3-4F60-9E1A-4F3378B43F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ECEE08D-05C3-4F60-9E1A-4F3378B43F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C3C54E-148C-413E-AF0A-022AA9279857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C3C54E-148C-413E-AF0A-022AA9279857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C3C54E-148C-413E-AF0A-022AA9279857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C3C54E-148C-413E-AF0A-022AA9279857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {969E6736-812F-4D71-95B8-98B3779127E8}
 	EndGlobalSection
 EndGlobal

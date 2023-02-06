@@ -40,13 +40,20 @@ namespace WinForm.DesktopToolsWidget
             {
                 _WidgetWndAsCodeConverter = new WidgetWnd();
                 _WidgetWndAsCodeConverter.Controls.Add(new AsCodeConverterWidget());
+
+                _WidgetWndAsCodeConverter.FormClosed += WidgetWndAsCodeConverter_FormClosed;
                 _WidgetWndAsCodeConverter.Show();
             }
             else
             {
                 _WidgetWndAsCodeConverter.Close();
-                _WidgetWndAsCodeConverter = null;
             }            
+        }
+
+        private void WidgetWndAsCodeConverter_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _ToolStripMenuItemAsCodeConverter.Checked = false;
+            _WidgetWndAsCodeConverter = null;
         }
 
         private void ToolStripMenuItemApplicationExit_Click(object sender, EventArgs e)
