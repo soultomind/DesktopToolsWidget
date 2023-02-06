@@ -13,9 +13,24 @@ namespace WinForm.DesktopToolsWidget
 {
     public partial class WidgetWnd : Form
     {
+        private Point _titlePoint = Point.Empty;
         public WidgetWnd()
         {
             InitializeComponent();
+
+            // TabletLayoutPanel 으로 변경
+            // Top 에 Label 컨트롤 추가 및 ContextMenu 추가
+        }
+
+        public string Title
+        {
+            get { return _LabelTitle.Text; }
+            set { _LabelTitle.Text = value; }
+        }
+
+        public TableLayoutPanel TableLayoutPanel
+        {
+            get { return _TableLayoutPanel; }
         }
 
         private void ToolStripMenuItemExitWnd_Click(object sender, EventArgs e)
@@ -23,29 +38,30 @@ namespace WinForm.DesktopToolsWidget
             Close();
         }
 
-        private void WidgetWnd_Activated(object sender, EventArgs e)
+        private void LabelTitle_MouseDown(object sender, MouseEventArgs e)
         {
-            
-        }
-
-        private void WidgetWnd_Deactivate(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void WidgetWnd_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
             {
-                Trace.WriteLine("Point=" + e.Location);
-                _ContextMenuStrip.SetBounds(
-                    //e.X, e.Y,
-                    Location.X, Location.Y,
-                    _ContextMenuStrip.Width, _ContextMenuStrip.Height,
-                    BoundsSpecified.Location);
+                _titlePoint = new Point(e.X, e.Y);
+            }
+        }
 
-                // TODO: 간혈적으로 왼쪽 상단에 뜨는현상 개선 필요
-                _ContextMenuStrip.Show();
+        private void LabelTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && _titlePoint != Point.Empty)
+            {
+                this.Location = new Point(
+                    this.Location.X - (_titlePoint.X - e.X),
+                    this.Location.Y - (_titlePoint.Y - e.Y)
+                );
+            }
+        }
+
+        private void LabelTitle_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                _titlePoint = Point.Empty;
             }
         }
     }

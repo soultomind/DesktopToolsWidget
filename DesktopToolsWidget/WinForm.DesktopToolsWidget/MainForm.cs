@@ -39,7 +39,9 @@ namespace WinForm.DesktopToolsWidget
             if (_ToolStripMenuItemAsCodeConverter.Checked)
             {
                 _WidgetWndAsCodeConverter = new WidgetWnd();
-                _WidgetWndAsCodeConverter.Controls.Add(new AsCodeConverterWidget());
+                _WidgetWndAsCodeConverter.Text = "AsCode Converter";
+                _WidgetWndAsCodeConverter.Title = "AsCode Converter";
+                _WidgetWndAsCodeConverter.TableLayoutPanel.Controls.Add(new AsCodeConverterWidget(), 0, 1);
 
                 _WidgetWndAsCodeConverter.FormClosed += WidgetWndAsCodeConverter_FormClosed;
                 _WidgetWndAsCodeConverter.Show();
