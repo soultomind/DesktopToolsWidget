@@ -54,8 +54,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\FileSizeUnitWidget.cs">
+    <Compile Include="Widgets\FileSizeUnitConverterWidget.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\FileSizeUnitConverterWidget.Designer.cs">
+      <DependentUpon>FileSizeUnitConverterWidget.cs</DependentUpon>
     </Compile>
     <Compile Include="Win32.cs" />
     <Compile Include="Program.cs" />
@@ -96,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\BaseWidget.resx">
       <DependentUpon>BaseWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\FileSizeUnitConverterWidget.resx">
+      <DependentUpon>FileSizeUnitConverterWidget.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WidgetWnd.resx">
       <DependentUpon>WidgetWnd.cs</DependentUpon>

@@ -33,6 +33,7 @@
             this._NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this._ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._ToolStripMenuItemAsCodeConverter = new System.Windows.Forms.ToolStripMenuItem();
+            this._ToolStripMenuItemFileSizeUnitConverter = new System.Windows.Forms.ToolStripMenuItem();
             this._ToolStripMenuItemApplicationExit = new System.Windows.Forms.ToolStripMenuItem();
             this._ContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -49,22 +50,30 @@
             // 
             this._ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._ToolStripMenuItemAsCodeConverter,
+            this._ToolStripMenuItemFileSizeUnitConverter,
             this._ToolStripMenuItemApplicationExit});
             this._ContextMenuStrip.Name = "_ContextMenuStrip";
             this._ContextMenuStrip.ShowCheckMargin = true;
-            this._ContextMenuStrip.Size = new System.Drawing.Size(194, 70);
+            this._ContextMenuStrip.Size = new System.Drawing.Size(215, 92);
             // 
             // _ToolStripMenuItemAsCodeConverter
             // 
             this._ToolStripMenuItemAsCodeConverter.Name = "_ToolStripMenuItemAsCodeConverter";
-            this._ToolStripMenuItemAsCodeConverter.Size = new System.Drawing.Size(193, 22);
+            this._ToolStripMenuItemAsCodeConverter.Size = new System.Drawing.Size(214, 22);
             this._ToolStripMenuItemAsCodeConverter.Text = "AsCode Converter";
             this._ToolStripMenuItemAsCodeConverter.Click += new System.EventHandler(this.ToolStripMenuItemAsCodeConverter_Click);
+            // 
+            // _ToolStripMenuItemFileSizeUnitConverter
+            // 
+            this._ToolStripMenuItemFileSizeUnitConverter.Name = "_ToolStripMenuItemFileSizeUnitConverter";
+            this._ToolStripMenuItemFileSizeUnitConverter.Size = new System.Drawing.Size(214, 22);
+            this._ToolStripMenuItemFileSizeUnitConverter.Text = "FileSizeUnit Converter";
+            this._ToolStripMenuItemFileSizeUnitConverter.Click += new System.EventHandler(this.ToolStripMenuItemFileSizeUnitConverter_Click);
             // 
             // _ToolStripMenuItemApplicationExit
             // 
             this._ToolStripMenuItemApplicationExit.Name = "_ToolStripMenuItemApplicationExit";
-            this._ToolStripMenuItemApplicationExit.Size = new System.Drawing.Size(193, 22);
+            this._ToolStripMenuItemApplicationExit.Size = new System.Drawing.Size(214, 22);
             this._ToolStripMenuItemApplicationExit.Text = "Exit";
             this._ToolStripMenuItemApplicationExit.Click += new System.EventHandler(this.ToolStripMenuItemApplicationExit_Click);
             // 
@@ -90,6 +99,7 @@
         private System.Windows.Forms.ContextMenuStrip _ContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemApplicationExit;
         private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemAsCodeConverter;
+        private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemFileSizeUnitConverter;
     }
 }
 
