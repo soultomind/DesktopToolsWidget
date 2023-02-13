@@ -60,6 +60,12 @@
     <Compile Include="Widgets\FileSizeUnitConverterWidget.Designer.cs">
       <DependentUpon>FileSizeUnitConverterWidget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Widgets\MemoWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\MemoWidget.Designer.cs">
+      <DependentUpon>MemoWidget.cs</DependentUpon>
+    </Compile>
     <Compile Include="Win32.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\FileSizeUnitConverterWidget.resx">
       <DependentUpon>FileSizeUnitConverterWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\MemoWidget.resx">
+      <DependentUpon>MemoWidget.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WidgetWnd.resx">
       <DependentUpon>WidgetWnd.cs</DependentUpon>

@@ -15,6 +15,7 @@ namespace WinForm.DesktopToolsWidget
     {
         private WidgetWnd _WidgetWndAsCodeConverter;
         private WidgetWnd _WidgetWndFileSizeConverter;
+        private WidgetWnd _WidgetWndMemo;
         public MainForm()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace WinForm.DesktopToolsWidget
 
             _ToolStripMenuItemAsCodeConverter.Checked = false;
             _ToolStripMenuItemFileSizeUnitConverter.Checked = false;
+            _ToolStripMenuItemMemo.Checked = false;
         }
 
         private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -40,9 +42,7 @@ namespace WinForm.DesktopToolsWidget
             _ToolStripMenuItemAsCodeConverter.Checked = !_ToolStripMenuItemAsCodeConverter.Checked;
             if (_ToolStripMenuItemAsCodeConverter.Checked)
             {
-                _WidgetWndAsCodeConverter = new WidgetWnd();
-                _WidgetWndAsCodeConverter.Text = _ToolStripMenuItemAsCodeConverter.Text;
-                _WidgetWndAsCodeConverter.Title = _ToolStripMenuItemAsCodeConverter.Text;
+                _WidgetWndAsCodeConverter = CreateWidgetWnd(_ToolStripMenuItemAsCodeConverter);
                 _WidgetWndAsCodeConverter.TableLayoutPanel.Controls.Add(new AsCodeConverterWidget(), 0, 1);
 
                 _WidgetWndAsCodeConverter.FormClosed += WidgetWndAsCodeConverter_FormClosed;
@@ -65,9 +65,7 @@ namespace WinForm.DesktopToolsWidget
             _ToolStripMenuItemFileSizeUnitConverter.Checked = !_ToolStripMenuItemFileSizeUnitConverter.Checked;
             if (_ToolStripMenuItemFileSizeUnitConverter.Checked)
             {
-                _WidgetWndFileSizeConverter = new WidgetWnd();
-                _WidgetWndFileSizeConverter.Text = _ToolStripMenuItemFileSizeUnitConverter.Text;
-                _WidgetWndFileSizeConverter.Title = _ToolStripMenuItemFileSizeUnitConverter.Text;
+                _WidgetWndFileSizeConverter = CreateWidgetWnd(_ToolStripMenuItemFileSizeUnitConverter);
                 _WidgetWndFileSizeConverter.TableLayoutPanel.Controls.Add(new FileSizeUnitConverterWidget(), 0, 1);
 
                 _WidgetWndFileSizeConverter.FormClosed += WidgetWndFileSizeUnitConverter_FormClosed;
@@ -81,8 +79,40 @@ namespace WinForm.DesktopToolsWidget
 
         private void WidgetWndFileSizeUnitConverter_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _ToolStripMenuItemAsCodeConverter.Checked = false;
+            _ToolStripMenuItemFileSizeUnitConverter.Checked = false;
             _WidgetWndFileSizeConverter = null;
+        }
+
+
+        private void ToolStripMenuItemMemo_Click(object sender, EventArgs e)
+        {
+            _ToolStripMenuItemMemo.Checked = !_ToolStripMenuItemMemo.Checked;
+            if (_ToolStripMenuItemMemo.Checked)
+            {
+                _WidgetWndMemo = CreateWidgetWnd(_ToolStripMenuItemMemo);
+                _WidgetWndMemo.TableLayoutPanel.Controls.Add(new MemoWidget(), 0, 1);
+
+                _WidgetWndMemo.FormClosed += MemoWidgetWnd_FormClosed;
+                _WidgetWndMemo.Show();
+            }
+            else
+            {
+                _WidgetWndMemo.Close();
+            }
+        }
+
+        private void MemoWidgetWnd_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _ToolStripMenuItemMemo.Checked = false;
+            _WidgetWndMemo = null;
+        }
+
+        private WidgetWnd CreateWidgetWnd(ToolStripMenuItem toolStripMenuItem)
+        {
+            WidgetWnd widgetWnd = new WidgetWnd();
+            widgetWnd.Text = toolStripMenuItem.Text;
+            widgetWnd.Title = toolStripMenuItem.Text;
+            return widgetWnd;
         }
 
         private void ToolStripMenuItemApplicationExit_Click(object sender, EventArgs e)

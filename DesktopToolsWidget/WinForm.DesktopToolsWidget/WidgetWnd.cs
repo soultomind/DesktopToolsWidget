@@ -17,9 +17,6 @@ namespace WinForm.DesktopToolsWidget
         public WidgetWnd()
         {
             InitializeComponent();
-
-            // TabletLayoutPanel 으로 변경
-            // Top 에 Label 컨트롤 추가 및 ContextMenu 추가
         }
 
         public string Title

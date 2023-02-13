@@ -49,11 +49,6 @@ namespace WinForm.DesktopToolsWidget.Widgets
             
         }
 
-        private void MenuItemExit_Click(object sender, EventArgs e)
-        {
-            ParentForm.Close();
-        }
-
         private void TextBoxInput_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;

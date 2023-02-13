@@ -34,6 +34,7 @@
             this._ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._ToolStripMenuItemAsCodeConverter = new System.Windows.Forms.ToolStripMenuItem();
             this._ToolStripMenuItemFileSizeUnitConverter = new System.Windows.Forms.ToolStripMenuItem();
+            this._ToolStripMenuItemMemo = new System.Windows.Forms.ToolStripMenuItem();
             this._ToolStripMenuItemApplicationExit = new System.Windows.Forms.ToolStripMenuItem();
             this._ContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this._ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._ToolStripMenuItemAsCodeConverter,
             this._ToolStripMenuItemFileSizeUnitConverter,
+            this._ToolStripMenuItemMemo,
             this._ToolStripMenuItemApplicationExit});
             this._ContextMenuStrip.Name = "_ContextMenuStrip";
             this._ContextMenuStrip.ShowCheckMargin = true;
@@ -69,6 +71,13 @@
             this._ToolStripMenuItemFileSizeUnitConverter.Size = new System.Drawing.Size(214, 22);
             this._ToolStripMenuItemFileSizeUnitConverter.Text = "FileSizeUnit Converter";
             this._ToolStripMenuItemFileSizeUnitConverter.Click += new System.EventHandler(this.ToolStripMenuItemFileSizeUnitConverter_Click);
+            // 
+            // _ToolStripMenuItemMemo
+            // 
+            this._ToolStripMenuItemMemo.Name = "_ToolStripMenuItemMemo";
+            this._ToolStripMenuItemMemo.Size = new System.Drawing.Size(214, 22);
+            this._ToolStripMenuItemMemo.Text = "Memo";
+            this._ToolStripMenuItemMemo.Click += new System.EventHandler(this.ToolStripMenuItemMemo_Click);
             // 
             // _ToolStripMenuItemApplicationExit
             // 
@@ -100,6 +109,7 @@
         private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemApplicationExit;
         private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemAsCodeConverter;
         private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemFileSizeUnitConverter;
+        private System.Windows.Forms.ToolStripMenuItem _ToolStripMenuItemMemo;
     }
 }
 
