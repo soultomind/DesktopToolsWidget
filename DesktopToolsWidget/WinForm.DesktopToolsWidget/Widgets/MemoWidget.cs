@@ -46,29 +46,5 @@ namespace WinForm.DesktopToolsWidget.Widgets
                 }
             }
         }
-
-        private void RichTextBox_TextChanged(object sender, EventArgs e)
-        {
-            RichTextBox richTextBox = sender as RichTextBox;
-            if (richTextBox != null)
-            {
-                if (String.IsNullOrWhiteSpace(richTextBox.Text))
-                {
-                    richTextBox.Text = PlaceHolder;
-                }
-            }
-        }
-
-        private void _RichTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            RichTextBox richTextBox = sender as RichTextBox;
-            if (richTextBox != null)
-            {
-                if (richTextBox.Text == PlaceHolder)
-                {
-                    richTextBox.Text = String.Empty;
-                }
-            }
-        }
     }
 }
