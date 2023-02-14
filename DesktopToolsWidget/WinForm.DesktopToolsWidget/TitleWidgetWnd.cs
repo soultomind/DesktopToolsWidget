@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace WinForm.DesktopToolsWidget
 {
-    public partial class WidgetWnd : Form
+    public partial class TitleWidgetWnd : Form
     {
         private Point _titlePoint = Point.Empty;
-        public WidgetWnd()
+        public TitleWidgetWnd()
         {
             InitializeComponent();
         }

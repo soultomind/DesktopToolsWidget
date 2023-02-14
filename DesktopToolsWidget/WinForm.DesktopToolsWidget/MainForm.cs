@@ -13,9 +13,9 @@ namespace WinForm.DesktopToolsWidget
 {
     public partial class MainForm : Form
     {
-        private WidgetWnd _WidgetWndAsCodeConverter;
-        private WidgetWnd _WidgetWndFileSizeConverter;
-        private WidgetWnd _WidgetWndMemo;
+        private TitleWidgetWnd _WidgetWndAsCodeConverter;
+        private TitleWidgetWnd _WidgetWndFileSizeConverter;
+        private BaseWidgetWnd _WidgetWndMemo;
         public MainForm()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace WinForm.DesktopToolsWidget
             _ToolStripMenuItemAsCodeConverter.Checked = !_ToolStripMenuItemAsCodeConverter.Checked;
             if (_ToolStripMenuItemAsCodeConverter.Checked)
             {
-                _WidgetWndAsCodeConverter = CreateWidgetWnd(_ToolStripMenuItemAsCodeConverter);
+                _WidgetWndAsCodeConverter = CreateTitleWidgetWnd(_ToolStripMenuItemAsCodeConverter);
                 _WidgetWndAsCodeConverter.TableLayoutPanel.Controls.Add(new AsCodeConverterWidget(), 0, 1);
 
                 _WidgetWndAsCodeConverter.FormClosed += WidgetWndAsCodeConverter_FormClosed;
@@ -65,7 +65,7 @@ namespace WinForm.DesktopToolsWidget
             _ToolStripMenuItemFileSizeUnitConverter.Checked = !_ToolStripMenuItemFileSizeUnitConverter.Checked;
             if (_ToolStripMenuItemFileSizeUnitConverter.Checked)
             {
-                _WidgetWndFileSizeConverter = CreateWidgetWnd(_ToolStripMenuItemFileSizeUnitConverter);
+                _WidgetWndFileSizeConverter = CreateTitleWidgetWnd(_ToolStripMenuItemFileSizeUnitConverter);
                 _WidgetWndFileSizeConverter.TableLayoutPanel.Controls.Add(new FileSizeUnitConverterWidget(), 0, 1);
 
                 _WidgetWndFileSizeConverter.FormClosed += WidgetWndFileSizeUnitConverter_FormClosed;
@@ -89,9 +89,14 @@ namespace WinForm.DesktopToolsWidget
             _ToolStripMenuItemMemo.Checked = !_ToolStripMenuItemMemo.Checked;
             if (_ToolStripMenuItemMemo.Checked)
             {
-                _WidgetWndMemo = CreateWidgetWnd(_ToolStripMenuItemMemo);
-                _WidgetWndMemo.TableLayoutPanel.Controls.Add(new MemoWidget(), 0, 1);
-
+                _WidgetWndMemo = new BaseWidgetWnd();
+                MemoWidget memoWidget = new MemoWidget()
+                {
+                    Dock = DockStyle.Fill
+                };
+                _WidgetWndMemo.Width = memoWidget.Width;
+                _WidgetWndMemo.Height = memoWidget.Height;
+                _WidgetWndMemo.Controls.Add(memoWidget);
                 _WidgetWndMemo.FormClosed += MemoWidgetWnd_FormClosed;
                 _WidgetWndMemo.Show();
             }
@@ -107,9 +112,9 @@ namespace WinForm.DesktopToolsWidget
             _WidgetWndMemo = null;
         }
 
-        private WidgetWnd CreateWidgetWnd(ToolStripMenuItem toolStripMenuItem)
+        private TitleWidgetWnd CreateTitleWidgetWnd(ToolStripMenuItem toolStripMenuItem)
         {
-            WidgetWnd widgetWnd = new WidgetWnd();
+            TitleWidgetWnd widgetWnd = new TitleWidgetWnd();
             widgetWnd.Text = toolStripMenuItem.Text;
             widgetWnd.Title = toolStripMenuItem.Text;
             return widgetWnd;

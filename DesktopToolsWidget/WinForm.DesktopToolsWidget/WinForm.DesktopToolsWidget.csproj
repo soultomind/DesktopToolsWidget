@@ -87,12 +87,15 @@
     <Compile Include="Widgets\BaseWidget.Designer.cs">
       <DependentUpon>BaseWidget.cs</DependentUpon>
     </Compile>
-    <Compile Include="WidgetWnd.cs">
+    <Compile Include="TitleWidgetWnd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WidgetWnd.Designer.cs">
-      <DependentUpon>WidgetWnd.cs</DependentUpon>
+    <Compile Include="TitleWidgetWnd.Designer.cs">
+      <DependentUpon>TitleWidgetWnd.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaseWidgetWnd.resx">
+      <DependentUpon>BaseWidgetWnd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,8 +121,8 @@
     <EmbeddedResource Include="Widgets\MemoWidget.resx">
       <DependentUpon>MemoWidget.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WidgetWnd.resx">
-      <DependentUpon>WidgetWnd.cs</DependentUpon>
+    <EmbeddedResource Include="TitleWidgetWnd.resx">
+      <DependentUpon>TitleWidgetWnd.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

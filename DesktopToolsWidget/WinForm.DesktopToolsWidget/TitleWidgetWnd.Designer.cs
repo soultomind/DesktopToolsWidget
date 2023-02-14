@@ -1,6 +1,6 @@
 ﻿namespace WinForm.DesktopToolsWidget
 {
-    partial class WidgetWnd
+    partial class TitleWidgetWnd
     {
         /// <summary>
         /// Required designer variable.

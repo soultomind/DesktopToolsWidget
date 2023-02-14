@@ -13,6 +13,8 @@ namespace WinForm.DesktopToolsWidget.Widgets
     public partial class MemoWidget : BaseWidget
     {
         public const string PlaceHolder = "메모를 작성하세요...";
+
+        private Point _titlePoint = Point.Empty;
         public MemoWidget()
         {
             InitializeComponent();
@@ -44,6 +46,90 @@ namespace WinForm.DesktopToolsWidget.Widgets
                 {
                     richTextBox.Text = PlaceHolder;
                 }
+            }
+        }
+
+        private void PanelTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                _titlePoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void PanelTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && _titlePoint != Point.Empty)
+            {
+                ParentForm.Location = new Point(
+                    ParentForm.Location.X - (_titlePoint.X - e.X),
+                    ParentForm.Location.Y - (_titlePoint.Y - e.Y)
+                );
+            }
+        }
+
+        private void PanelTitle_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                _titlePoint = Point.Empty;
+            }
+        }
+
+        private void LabelNewMemo_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            if (label != null)
+            {
+                label.BackColor = SystemColors.ControlDark;
+            }
+        }
+
+        private void LabelNewMemo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = sender as Label;
+            if (label != null)
+            {
+                label.BackColor = SystemColors.ControlDarkDark;
+            }
+        }
+
+        private void LabelNewMemo_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            if (label != null)
+            {
+                label.BackColor = SystemColors.ActiveBorder;
+            }
+        }
+
+
+        private void LabelClose_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            if (label != null)
+            {
+                label.BackColor = SystemColors.ControlDark;
+            }
+        }
+
+        private void LabelClose_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = sender as Label;
+            if (label != null)
+            {
+                label.BackColor = SystemColors.ControlDarkDark;
+            }
+
+            ParentForm.Close();
+        }
+
+        private void LabelClose_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            if (label != null)
+            {
+                label.BackColor = SystemColors.ActiveBorder;
             }
         }
     }
